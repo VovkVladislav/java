@@ -1,0 +1,67 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+   static Scanner Sc = new Scanner(System.in);
+
+
+    class Truck {
+
+
+        //_________________________________________________ FIELDS
+        private int vol = 100;
+        private int weight = 20;
+
+        private int vLoad;
+        private int wLoad;
+
+//_________________________________________________ METHODS
+
+
+//_________________________________________________ SETTING OF THE VALUES
+
+        void Values(int vLoad, int wLoad) {
+
+            System.out.println("Enter volume of cargo: ");
+            vLoad = Sc.nextInt();
+            System.out.println("Enter weight of cargo: ");
+            wLoad = Sc.nextInt();
+
+            if (vLoad <= vol && wLoad <= weight) {
+                System.out.println("You loaded a cargo with the following values: ");
+
+                vol -= vLoad;
+                weight -= wLoad;
+                System.out.println("Free volume: " + vol);
+                System.out.println("Free weight: " + weight);
+
+
+            } else {
+                System.out.println("You have exceeded the cargo limit!");
+                System.out.println("Max volume - 100, max weight - 20");
+                wLoad = vLoad = vol = weight = 0;
+            }
+        }
+
+//_________________________________________________
+
+
+    }
+
+    public static void main(String[] args) {
+
+
+        int x = 1;
+        do {
+            System.out.println("ADD VALUES - 1 // END - 2");
+            x = Sc.nextInt();
+            if (x == 1) {
+                Truck();
+            } else {
+                x++;
+            }
+
+        }while(x==1);
+    }
+}
