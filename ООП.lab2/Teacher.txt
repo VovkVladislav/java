@@ -1,0 +1,9 @@
+public class Teacher extends Person{
+    private String Univ;
+    private String Lesson;
+    public Teacher(String name, String surname, String univ, String lesson){
+        String Name = new String(name);
+        String Surname = new String(surname);
+        String Univ = new String(univ);
+        String Lesson = new String(lesson);
+    }}

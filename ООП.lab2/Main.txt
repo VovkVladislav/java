@@ -1,0 +1,17 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String name, surname, lesson, univ, group, mark;
+    Scanner S = new Scanner(System.in);
+
+        System.out.println("Enter name: ");
+        name = S.next();
+        System.out.println("Enter surname: ");
+        surname = S.next();
+
+        Teacher A = new Teacher(name, surname, lesson, univ);
+        Student B = new Student(name, surname, group, mark);
+        }}
