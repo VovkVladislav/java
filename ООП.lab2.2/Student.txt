@@ -1,0 +1,18 @@
+package com.company;
+
+public class Student extends Person{
+
+    public String Name, Surname, Group, Mark;
+
+    public Student(String Name,String Surname,String Univ,String Lesson, String Group, String Mark){
+        super(Name,Surname,Univ,Lesson,Group,Mark);
+
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Group = Group;
+        this.Mark = Mark;}
+
+    public String Info(){
+        return(Name + "  " + Surname + " | " + Group + " , " + Mark);
+    }
+    }

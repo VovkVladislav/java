@@ -1,0 +1,18 @@
+package com.company;
+
+public abstract class Person {
+
+    public String Name, Surname, Univ, Lesson, Group, Mark;
+
+    public Person(String Name,String Surname,String Univ,String Lesson,String Group,String Mark) {
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Univ = Univ;
+        this.Lesson = Lesson;
+        this.Group = Group;
+        this.Mark = Mark;
+    }
+
+    public abstract String Info();
+}
+

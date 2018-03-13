@@ -1,0 +1,41 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+
+
+// CREATING OF TEACHER
+        System.out.println("Enter name of teacher");
+        String tName = scan.next();
+        System.out.println("Enter surname of teacher");
+        String tSurname = scan.next();
+        System.out.println("Enter university of teacher");
+        String tUniv = scan.next();
+        System.out.println("Enter lesson of teacher");
+        String tLesson = scan.next();
+
+        Teacher T = new Teacher(tName,tSurname,tUniv,tLesson, null , null);
+        System.out.println("Info about your teacher " + T.Info());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+
+// CREATING OF STUDENT
+        System.out.println("Enter name of student");
+        String sName = scan.next();
+        System.out.println("Enter surname of student");
+        String sSurname = scan.next();
+        System.out.println("Enter group of student");
+        String sGroup = scan.next();
+        System.out.println("Enter mark of student");
+        String sMark = scan.next();
+
+        Student S = new Student(sName,sSurname,null,null, sGroup, sMark );
+        System.out.println("Info about your student " + S.Info());
+        }}

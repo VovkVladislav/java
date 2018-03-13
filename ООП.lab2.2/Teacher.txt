@@ -1,0 +1,19 @@
+package com.company;
+
+public class Teacher extends Person{
+
+    public String Name, Surname, Univ, Lesson;
+
+    public Teacher(String Name,String Surname,String Univ,String Lesson, String Group, String Mark){
+        super(Name,Surname,Univ,Lesson,Group,Mark);
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Univ = Univ;
+        this.Lesson = Lesson;
+        }
+
+        @Override
+    public String Info(){
+        return(Name + " " + Surname + " | " + Univ + " , " + Lesson);
+        }
+    }
