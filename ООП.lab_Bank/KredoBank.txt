@@ -1,0 +1,14 @@
+package com.company;
+
+public class KredoBank extends BankSystem {
+    String BankName = "Kredo Bank";
+    protected double depositPc = 1.12;
+    protected double withdrawPc = 1.025;
+
+    @Override
+    protected String Operation(double replenish){
+
+        withdrawSum = replenish*depositPc - withdrawSum*withdrawPc;
+        return ("Your withdraw from " + BankName + " account: " + withdrawSum);
+    }
+}

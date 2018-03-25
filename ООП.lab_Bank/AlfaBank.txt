@@ -1,0 +1,13 @@
+package com.company;
+public class AlfaBank extends BankSystem {
+    String BankName = "Alfa Bank";
+    protected double depositPc = 1.08;
+    protected double withdrawPc = 1.01;
+
+    @Override
+    protected String Operation(double replenish){
+
+        withdrawSum = replenish*depositPc - withdrawSum*withdrawPc;
+        return ("Your withdraw from " + BankName + " account: " + withdrawSum);
+    }
+}

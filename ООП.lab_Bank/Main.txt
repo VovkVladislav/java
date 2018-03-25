@@ -1,0 +1,24 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Scanner sc = new Scanner(System.in);
+System.out.println("Enter your replenish sum: ");
+        double replenish = sc.nextDouble();
+
+        System.out.println("");
+        System.out.println("[-----------------------------------------------------------]");
+        BankSystem first = new AlfaBank();
+        BankSystem second = new PrivatBank();
+        BankSystem third = new KredoBank();
+        System.out.println(first.Operation(replenish));
+        System.out.println(second.Operation(replenish));
+        System.out.println(third.Operation(replenish));
+        System.out.println("[-----------------------------------------------------------]");
+    }
+}

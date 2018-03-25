@@ -1,0 +1,12 @@
+package com.company;
+
+public abstract class BankSystem {
+    protected String BankName;
+
+    protected double depositPc;
+    protected double withdrawPc;
+
+    protected double withdrawSum;
+
+    protected abstract String Operation(double replenish);
+}
