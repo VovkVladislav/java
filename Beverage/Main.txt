@@ -1,0 +1,84 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    static int toPay;
+    public static void main (String [] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Barista: What kind of drink do you want?");
+        System.out.println("1. Americano");
+        System.out.println("2. Espresso");
+        int coffee = scanner.nextInt();
+        System.out.println(" ");
+
+        System.out.println("Barista: Do you want some add-ons? ");
+        System.out.println("1. Yes, milk.");
+        System.out.println("2. Yes, sugar.");
+        System.out.println("3. Yes, milk and sugar.");
+        System.out.println("4 - No, thank you.");
+        int addOns = scanner.nextInt();
+        System.out.println(" ");
+
+System.out.println("----------------[check]----------------");
+
+        if (coffee==1) {
+
+            switch (addOns) {
+                case 1:
+                    Beverage withSugar = new Sugar(new Americano());
+                    System.out.println(withSugar.description());
+                    toPay=withSugar.cost();
+                    break;
+                case 2:
+                    Beverage withMilk = new Milk(new Americano());
+                    System.out.println(withMilk.description());
+                    toPay= withMilk.cost();
+                    break;
+                case 3:
+                    Beverage withAll = new Sugar(new Milk(new Americano()));
+                    System.out.println(withAll.description());
+                    toPay=withAll.cost();
+                    break;
+                case 4:
+                    Beverage withNothing = new Sugar(new Milk(new Americano()));
+                    System.out.println(withNothing.description());
+                    toPay = withNothing.cost();
+                    break;
+
+            }
+        } else if (coffee==2) {
+
+            switch (addOns) {
+                case 1:
+                    Beverage withMilk = new Milk(new Espresso());
+                    System.out.println(withMilk.description());
+                    toPay=withMilk.cost();
+                    break;
+                case 2:
+                    Beverage withSugar = new Sugar(new Espresso());
+                    System.out.println(withSugar.description());
+                    toPay=withSugar.cost();
+                    break;
+
+                case 3:
+                    Beverage withAll = new Sugar(new Milk(new Espresso()));
+                    System.out.println(withAll.description());
+                    toPay=withAll.cost();
+                    break;
+                case 4:
+                    Beverage withNothing = new Sugar(new Milk(new Espresso()));
+                    System.out.println(withNothing.description());
+                    toPay=withNothing.cost();
+                    break; }
+                    }
+                    System.out.println(toPay + " UAH");
+
+
+
+    }}
+
+
+
+
+
