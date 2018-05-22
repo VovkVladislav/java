@@ -1,0 +1,9 @@
+package com.company;
+interface IObserved {
+    void OnSubscribe();
+    void OnUnsubscribe();
+
+    void OnUpdateTemperature(float temperature);
+    void OnUpdatePressure(float pressure);
+    void OnUpdateHumidity(float humidity);
+}

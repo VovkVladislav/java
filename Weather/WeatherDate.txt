@@ -1,0 +1,48 @@
+package com.company;
+import java.util.ArrayList;
+
+public class WeatherDate implements ISubject {
+    private float temperature;
+    private float pressure;
+    private float humidity;
+
+    ArrayList<IObserved> subscribers = new ArrayList<IObserved>();
+
+    public void setTemperature(int temp){
+        temperature = temp;
+        this.updateTemperature(); }
+
+
+
+    public void setPressure (int press){
+        pressure = press;
+        this.updatePressure(); }
+
+    public void setHumidity (int humid){
+        humidity = humid;
+        this.updateHumidity(); }
+
+    @Override
+    public void subscribe(IObserved o) {
+        subscribers.add(o);
+        subscribers.get(0).OnSubscribe();}
+
+    @Override
+    public void unsubscribe(IObserved o) {
+        subscribers.get(0).OnUnsubscribe();
+        int index = subscribers.indexOf(o);
+        subscribers.remove(index); }
+
+    @Override
+    public void updateTemperature() {
+        for(int i=0; i<subscribers.size(); i++) { subscribers.get(i).OnUpdateTemperature(temperature); } }
+
+    @Override
+    public void updatePressure() {
+        for(int i=0; i<subscribers.size(); i++) { subscribers.get(i).OnUpdatePressure(pressure); } }
+
+    @Override
+    public void updateHumidity() {
+        for(int i=0; i<subscribers.size(); i++) { subscribers.get(i).OnUpdateHumidity(humidity); } }
+
+}

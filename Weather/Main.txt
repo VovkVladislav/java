@@ -1,0 +1,62 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+    private static int firstAction;
+    private static int actions;
+    public static void main (String[]args){
+        Scanner scanner = new Scanner(System.in);
+        WeatherDate weatherDate = new WeatherDate();
+        Display display = new Display();
+
+    while (true){
+        System.out.println("Subscribe - 1");
+        System.out.println("Exit - 2");
+        firstAction = scanner.nextInt();
+        if (firstAction == 1){
+            weatherDate.subscribe(display); }
+        else if (firstAction == 2){
+            System.out.println("Ending session...");
+        break;}
+
+
+        while (true){
+            System.out.println(" ");
+            System.out.println("[Administrator]");
+            System.out.println("To set temperature - 1");
+            System.out.println("To set pressure - 2");
+            System.out.println("To set humidity - 3");
+            System.out.println(" ");
+            System.out.println("[USER]");
+            System.out.println("To unsubscribe - 4");
+            System.out.println("To exit - 5");
+            System.out.println(" ");
+            System.out.print("Your action: ");
+            actions = scanner.nextInt();
+            if (actions == 1){
+                System.out.print("Enter temperature: ");
+                int temperature = scanner.nextInt();
+                weatherDate.setTemperature(temperature); }
+
+            else if (actions == 2){
+                System.out.print("Enter pressure: ");
+                int pressure = scanner.nextInt();
+                weatherDate.setPressure(pressure); }
+
+            else if (actions == 3){
+                System.out.print("Enter humidity: ");
+                int humidity = scanner.nextInt();
+                weatherDate.setHumidity(humidity); }
+
+
+            else if (actions == 4){
+                weatherDate.unsubscribe(display); }
+
+            else if (actions == 5){
+                break; }
+
+            else
+                System.out.println("Error. Choose another action: ");
+        }
+    }}
+}

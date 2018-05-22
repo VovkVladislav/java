@@ -1,0 +1,8 @@
+package com.company;
+public interface ISubject {
+    void subscribe(IObserved o);
+    void unsubscribe(IObserved o);
+    void updateTemperature();
+    void updatePressure();
+    void updateHumidity();
+}

@@ -1,0 +1,35 @@
+package com.company;
+public class Display implements IObserved{
+
+    @Override
+    public void OnSubscribe(){
+        System.out.println(" ");
+        System.out.println("Now you'll have an update massages.");
+        System.out.println(" ");
+    }
+    @Override
+    public void OnUnsubscribe(){
+        System.out.println(" ");
+        System.out.println("Now you'll not have an update massages.");
+        System.out.println(" ");
+    }
+
+
+    @Override
+    public void OnUpdateTemperature(float temperature) {
+        System.out.println(" ");
+        System.out.println("[USER SCREEN]: Administrator updated temperature: " + temperature);
+        System.out.println(" ");}
+
+    @Override
+    public void OnUpdatePressure(float pressure) {
+        System.out.println(" ");
+        System.out.println("[USER SCREEN]: Administrator updated pressure: " + pressure);
+        System.out.println(" ");}
+
+    @Override
+    public void OnUpdateHumidity(float humidity) {
+        System.out.println(" ");
+        System.out.println("[USER SCREEN]: Administrator updated humidity: " + humidity);
+        System.out.println(" ");}
+}
