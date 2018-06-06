@@ -1,0 +1,10 @@
+package com.company;
+
+public class NewYorkPizza implements IPizzaFactory{
+
+    public void createPizza(String pizzaName){
+        Pizza pizza;
+
+        if (pizzaName.compareTo("Karpatian")==0) { pizza = new KarpatianPizza(", New York style"); }
+        else if (pizzaName.compareTo("Gavai")==0) { pizza = new GavaiPizza(", New York style"); }
+    }}

@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Location?\n 1 - NewYork \n 2 - Chicago \n>: ");
+
+
+        IPizzaFactory newYorkPizza = new NewYorkPizza();
+        IPizzaFactory chicagoPizza = new ChicagoPizza();
+
+
+        switch (scanner.nextInt()){
+            case 1: System.out.print("What kind of pizza do you want??\n 1 - Karpatian\n 2 - Gavai \n>: ");
+                if (scanner.nextInt() == 1) { newYorkPizza.createPizza("Karpatian"); }
+                else { newYorkPizza.createPizza("Gavai"); }
+                break;
+
+            case 2: System.out.print("What kind of pizza do you want?\n 1 - Karpatian\n 2 - Gavai \n>: ");
+                if (scanner.nextInt() == 1) { chicagoPizza.createPizza("Karpatian"); }
+                else {chicagoPizza.createPizza("Gavai");}
+                break;}
+
+    }}
